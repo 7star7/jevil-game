@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/sprites/player/kris/PL_K_AT_15.png" type="Texture" id=1]
+[ext_resource path="res://src/sprites/player/kris/PL_K_AT_14.png" type="Texture" id=2]
+[ext_resource path="res://src/sprites/player/kris/PL_K_AT_16.png" type="Texture" id=3]
+[ext_resource path="res://src/sprites/player/kris/PL_K_AT_17.png" type="Texture" id=4]
+[ext_resource path="res://src/sprites/player/kris/PL_K_AT_18.png" type="Texture" id=5]
+[ext_resource path="res://src/sprites/player/kris/PL_K_AT_19.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 7, -19 ), Vector2( 6.5, -19 ), Vector2( 6, -19 ), Vector2( 6, -19.5 ), Vector2( 6, -19.5 ), Vector2( 6.5, -19.5 ) ]
+}
+
+[node name="KrisBattle" type="Sprite"]
+texture = ExtResource( 1 )
+offset = Vector2( 6.5, -19 )
+
+[node name="Anime" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/idle = SubResource( 2 )

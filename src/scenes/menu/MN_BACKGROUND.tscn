@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/scenes/menu/MN_BG_DEPTH.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/scenes/menu/MN_BACKGROUND.gd" type="Script" id=2]
+[ext_resource path="res://src/sprites/menu/DEPTH.png" type="Texture" id=4]
+
+[node name="MenuBackground" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BottomDepth" type="Node2D" parent="."]
+position = Vector2( 320, 240 )
+scale = Vector2( 1.5, 1.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Depth1" type="Sprite" parent="BottomDepth"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Depth2" type="Sprite" parent="BottomDepth"]
+position = Vector2( -320, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+centered = false
+flip_h = true
+
+[node name="Depth3" type="Sprite" parent="BottomDepth"]
+position = Vector2( -320, -240 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+centered = false
+flip_h = true
+flip_v = true
+
+[node name="Depth4" type="Sprite" parent="BottomDepth"]
+position = Vector2( 0, -240 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+centered = false
+flip_v = true
+
+[node name="DepthGroup" parent="." instance=ExtResource( 1 )]

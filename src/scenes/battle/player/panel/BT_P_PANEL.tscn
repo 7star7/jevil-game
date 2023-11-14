@@ -1,0 +1,170 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://src/scenes/battle/BMF_COMM.tres" type="BitmapFont" id=1]
+[ext_resource path="res://src/sprites/battle/COMM_HP.png" type="Texture" id=2]
+[ext_resource path="res://src/scenes/battle/player/panel/PP_RALSEI.tres" type="Resource" id=3]
+[ext_resource path="res://src/sprites/battle/COMM_SLASH.png" type="Texture" id=4]
+[ext_resource path="res://src/sprites/battle/ICON_FIGHT.png" type="Texture" id=12]
+[ext_resource path="res://src/sprites/player/NAME_NONE.png" type="Texture" id=13]
+[ext_resource path="res://src/sprites/player/ICON_NONE.png" type="Texture" id=14]
+[ext_resource path="res://src/scenes/battle/player/panel/BT_P_PANEL.gd" type="Script" id=15]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color( 0.784314, 0.784314, 0.784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color( 0.784314, 0.784314, 0.784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_top = 3
+border_color = Color( 0.2, 0.12549, 0.2, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.784314, 0.784314, 0.784314, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 0, 0, 1 )
+
+[node name="CharacterPanel" type="Control"]
+margin_right = 213.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 213, 36 )
+script = ExtResource( 15 )
+character = ExtResource( 3 )
+
+[node name="Command" type="Panel" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+rect_min_size = Vector2( 213, 32 )
+custom_styles/panel = SubResource( 8 )
+
+[node name="Background" type="Control" parent="Command"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+
+[node name="VContainer" type="VBoxContainer" parent="Command"]
+margin_right = 213.0
+margin_bottom = 36.0
+
+[node name="VSplit" type="VSplitContainer" parent="Command/VContainer"]
+margin_right = 213.0
+size_flags_vertical = 3
+
+[node name="HContainer" type="HBoxContainer" parent="Command/VContainer"]
+margin_top = 4.0
+margin_right = 213.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 0, 32 )
+custom_constants/separation = 4
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HSplit1" type="HSplitContainer" parent="Command/VContainer/HContainer"]
+margin_right = 11.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 11, 0 )
+
+[node name="Info" type="Control" parent="."]
+anchor_right = 1.0
+rect_min_size = Vector2( 213, 36 )
+
+[node name="Activated" type="Panel" parent="Info"]
+margin_right = 213.0
+margin_bottom = 36.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="Deactivated" type="Panel" parent="Info"]
+visible = false
+margin_right = 213.0
+margin_bottom = 36.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="Icon" type="Control" parent="Info"]
+margin_left = 13.0
+margin_top = 10.0
+margin_right = 47.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 35, 24 )
+
+[node name="Head" type="TextureRect" parent="Info/Icon"]
+margin_right = 34.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 35, 24 )
+texture = ExtResource( 14 )
+
+[node name="Command" type="TextureRect" parent="Info/Icon"]
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+margin_right = 34.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 35, 24 )
+texture = ExtResource( 12 )
+
+[node name="Name" type="TextureRect" parent="Info"]
+margin_left = 51.0
+margin_top = 13.0
+margin_right = 107.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 56, 15 )
+texture = ExtResource( 13 )
+
+[node name="Slash" type="TextureRect" parent="Info"]
+margin_left = 161.0
+margin_top = 8.0
+margin_right = 173.0
+margin_bottom = 18.0
+texture = ExtResource( 4 )
+
+[node name="HP" type="TextureRect" parent="Info"]
+margin_left = 110.0
+margin_top = 21.0
+margin_right = 124.0
+margin_bottom = 29.0
+texture = ExtResource( 2 )
+
+[node name="HealthBar" type="ProgressBar" parent="Info"]
+margin_left = 128.0
+margin_top = 21.0
+margin_right = 204.0
+margin_bottom = 30.0
+custom_styles/fg = SubResource( 5 )
+custom_styles/bg = SubResource( 6 )
+max_value = 50.0
+value = 50.0
+allow_lesser = true
+percent_visible = false
+
+[node name="MaxHealth" type="Label" parent="Info"]
+margin_left = 174.0
+margin_top = 8.0
+margin_right = 203.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 1 )
+text = "50
+"
+align = 2
+
+[node name="TexHealth" type="Label" parent="Info"]
+margin_left = 129.0
+margin_top = 8.0
+margin_right = 158.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 1 )
+text = "50
+"
+align = 2
+
+[node name="Tween" type="Tween" parent="."]

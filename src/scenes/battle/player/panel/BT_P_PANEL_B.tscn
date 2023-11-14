@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/sprites/battle/COMM_FIGHT_NORMAL.png" type="Texture" id=1]
+[ext_resource path="res://src/sprites/battle/COMM_FIGHT_FOCUSED.png" type="Texture" id=2]
+[ext_resource path="res://src/scenes/battle/player/panel/BT_P_PANEL_B.gd" type="Script" id=3]
+
+[node name="Fight" type="TextureButton"]
+margin_right = 31.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 31, 32 )
+focus_neighbour_top = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+mouse_filter = 2
+toggle_mode = true
+action_mode = 0
+button_mask = 0
+texture_normal = ExtResource( 1 )
+texture_focused = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[connection signal="focus_entered" from="." to="." method="_on_self_focus_entered"]

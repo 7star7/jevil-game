@@ -1,0 +1,218 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://src/scenes/battle/player/BT_SOUL_R.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/scenes/battle/player/BT_P_TENSION.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/8ope/FT_EO_DELTARUNE.tres" type="DynamicFont" id=3]
+[ext_resource path="res://src/scenes/battle/BATTLE_SCENE.gd" type="Script" id=4]
+[ext_resource path="res://src/sprites/battle/PURPLE_GRID_FRONT.png" type="Texture" id=5]
+[ext_resource path="res://src/sprites/battle/PURPLE_GRID_BACK.png" type="Texture" id=6]
+[ext_resource path="res://src/sprites/SH_SCROLL.gdshader" type="Shader" id=7]
+[ext_resource path="res://src/scenes/battle/foe/EN_JEVIL.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/sprites/JEVIL_EXAMPLE.png" type="Texture" id=9]
+[ext_resource path="res://src/scenes/battle/player/panel/BT_P_FIGHT.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/sprites/player/kris/PL_K_B_IDLE.png" type="Texture" id=14]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 7 )
+shader_param/moving = Vector2( -0.8, -1 )
+shader_param/speed = 0.6
+shader_param/time_by = 1.0
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 7 )
+shader_param/moving = Vector2( 1, 1 )
+shader_param/speed = 0.6
+shader_param/time_by = 1.0
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 72, 74 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 14 )
+region = Rect2( 72, 0, 72, 74 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 14 )
+region = Rect2( 144, 0, 72, 74 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 14 )
+region = Rect2( 216, 0, 72, 74 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 14 )
+region = Rect2( 288, 0, 72, 74 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 14 )
+region = Rect2( 360, 0, 72, 74 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "idle",
+"speed": 6.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_top = 3
+border_color = Color( 0.2, 0.12549, 0.2, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_top = 3
+border_color = Color( 0.2, 0.12549, 0.2, 1 )
+anti_aliasing = false
+
+[node name="BattleScene" type="Node"]
+process_priority = 1
+script = ExtResource( 4 )
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Black" type="ColorRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="BackGrid" type="Sprite" parent="Background"]
+material = SubResource( 2 )
+texture = ExtResource( 6 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 640, 480 )
+
+[node name="FrontGrid" type="Sprite" parent="Background"]
+material = SubResource( 3 )
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 640, 480 )
+
+[node name="Darker" type="ColorRect" parent="Background"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.686275 )
+
+[node name="PlayerLayer" type="Node2D" parent="."]
+
+[node name="Kris" type="AnimatedSprite" parent="PlayerLayer"]
+position = Vector2( 148, 187 )
+frames = SubResource( 17 )
+animation = "idle"
+playing = true
+
+[node name="EnemyLayer" type="Node2D" parent="."]
+
+[node name="Jevil" parent="EnemyLayer" instance=ExtResource( 8 )]
+position = Vector2( 520, 183 )
+
+[node name="Jevil2" parent="EnemyLayer" instance=ExtResource( 8 )]
+position = Vector2( 579, 104 )
+
+[node name="Jevil3" parent="EnemyLayer" instance=ExtResource( 8 )]
+position = Vector2( 579, 257 )
+
+[node name="TensionBar" parent="." instance=ExtResource( 2 )]
+margin_left = 38.0
+margin_top = 40.0
+margin_right = 63.0
+margin_bottom = 236.0
+rect_min_size = Vector2( 25, 196 )
+
+[node name="BottomInterface" type="Panel" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -118.0
+custom_styles/panel = SubResource( 10 )
+
+[node name="PlayerMenu" type="Panel" parent="BottomInterface"]
+anchor_right = 1.0
+margin_top = -36.0
+grow_vertical = 0
+rect_min_size = Vector2( 0, 36 )
+custom_styles/panel = SubResource( 7 )
+
+[node name="HContainer" type="HBoxContainer" parent="BottomInterface/PlayerMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+custom_constants/separation = 0
+
+[node name="HSplit1" type="HSplitContainer" parent="BottomInterface/PlayerMenu/HContainer"]
+margin_right = 640.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+
+[node name="TextZone" type="Control" parent="BottomInterface"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="EnemyList" type="VBoxContainer" parent="BottomInterface/TextZone"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -267.0
+margin_top = -46.0
+margin_right = 271.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 538, 87 )
+custom_constants/separation = 0
+
+[node name="FightPanel" type="Node2D" parent="BottomInterface/TextZone"]
+visible = false
+
+[node name="Guide1" type="Polygon2D" parent="BottomInterface/TextZone/FightPanel"]
+color = Color( 0, 0, 0.501961, 1 )
+polygon = PoolVector2Array( 303, 41, 303, 44, 77, 44, 77, 41 )
+
+[node name="Guide2" type="Polygon2D" parent="BottomInterface/TextZone/FightPanel"]
+position = Vector2( 0, 38 )
+color = Color( 0, 0, 0.501961, 1 )
+polygon = PoolVector2Array( 303, 41, 303, 44, 77, 44, 77, 41 )
+
+[node name="BasePress" parent="BottomInterface/TextZone/FightPanel" instance=ExtResource( 10 )]
+
+[node name="Label" type="Label" parent="BottomInterface/TextZone"]
+margin_left = 62.0
+margin_top = 11.0
+margin_right = 588.0
+margin_bottom = 102.0
+custom_colors/font_color_shadow = Color( 0.0313726, 0.0313726, 0.470588, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "This is a long testing text. This is one sentence. This is another sentence. 1 2 3 4 5 6 7 8 9"
+autowrap = true
+max_lines_visible = 3
+
+[node name="Asterix" type="Label" parent="BottomInterface/TextZone"]
+margin_left = 30.0
+margin_top = 11.0
+margin_right = 48.0
+margin_bottom = 36.0
+custom_colors/font_color_shadow = Color( 0.0313726, 0.0313726, 0.470588, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "*"
+
+[node name="AttackLayer" type="Node2D" parent="."]
+
+[node name="Soul" parent="AttackLayer" instance=ExtResource( 1 )]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+mix_target = 1
+
+[node name="JevilExample" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.513726 )
+position = Vector2( 320, 240 )
+texture = ExtResource( 9 )
+
+[connection signal="grazed" from="AttackLayer/Soul" to="." method="_on_Soul_grazed"]

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=10 format=2]
+
+[ext_resource path="res://src/scenes/battle/player/panel/RS_PP_BASE.gd" type="Script" id=1]
+[ext_resource path="res://src/sprites/player/noelle/PL_N_B_ICON.png" type="Texture" id=2]
+[ext_resource path="res://src/sprites/player/noelle/PL_N_B_ICON_H.png" type="Texture" id=3]
+[ext_resource path="res://src/sprites/player/noelle/PL_N_B_NAME.png" type="Texture" id=4]
+[ext_resource path="res://src/scenes/battle/player/panel/BD_FIGHT.tres" type="Resource" id=5]
+[ext_resource path="res://src/scenes/battle/player/panel/BD_MAGIC.tres" type="Resource" id=6]
+[ext_resource path="res://src/scenes/battle/player/panel/BD_ITEM.tres" type="Resource" id=7]
+[ext_resource path="res://src/scenes/battle/player/panel/BD_SPARE.tres" type="Resource" id=8]
+[ext_resource path="res://src/scenes/battle/player/panel/BD_DEFEND.tres" type="Resource" id=9]
+
+[resource]
+script = ExtResource( 1 )
+icon = ExtResource( 2 )
+hurt_icon = ExtResource( 3 )
+character_name = ExtResource( 4 )
+border_color = Color( 1, 1, 0, 1 )
+icon_color = Color( 1, 1, 0, 1 )
+commands = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ]

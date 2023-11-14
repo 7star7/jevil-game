@@ -1,0 +1,13 @@
+[gd_resource type="BitmapFont" load_steps=3 format=2]
+
+[ext_resource path="res://addons/BitmapTextureFont/main.gd" type="Script" id=1]
+[ext_resource path="res://src/sprites/battle/COMM_FONT.png" type="Texture" id=2]
+
+[resource]
+textures = [ ExtResource( 2 ) ]
+chars = PoolIntArray( 56, 0, 80, 0, 8, 10, 0, 0, 8, 48, 0, 16, 0, 8, 10, 0, 0, 8, 32, 0, 8, 0, 8, 10, 0, 0, 8, 57, 0, 88, 0, 8, 10, 0, 0, 8, 49, 0, 24, 0, 8, 10, 0, 0, 8, 50, 0, 32, 0, 8, 10, 0, 0, 8, 51, 0, 40, 0, 8, 10, 0, 0, 8, 52, 0, 48, 0, 8, 10, 0, 0, 8, 53, 0, 56, 0, 8, 10, 0, 0, 8, 45, 0, 0, 0, 8, 10, 0, 0, 8, 54, 0, 64, 0, 8, 10, 0, 0, 8, 55, 0, 72, 0, 8, 10, 0, 0, 8 )
+script = ExtResource( 1 )
+texture = ExtResource( 2 )
+characterMap = "- 0123456789"
+size = Vector2( 8, 10 )
+monospace = true

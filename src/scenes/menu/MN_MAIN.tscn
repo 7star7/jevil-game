@@ -1,0 +1,113 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/fonts/8ope/FT_EO_DELTARUNE.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/scenes/menu/MN_BACKGROUND.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/sound/bgm/DR_ANOTHERHIM.ogg" type="AudioStream" id=3]
+[ext_resource path="res://src/sprites/menu/MN_SOUL.png" type="Texture" id=4]
+[ext_resource path="res://src/scenes/menu/MN_MAIN.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="NewMainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="VContainer" type="ViewportContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Viewport" type="Viewport" parent="VContainer"]
+size = Vector2( 640, 480 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="MenuBackground" parent="VContainer/Viewport" instance=ExtResource( 2 )]
+
+[node name="Darker" type="ColorRect" parent="VContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.54902 )
+
+[node name="ButtonLayer" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BattleButton" type="ToolButton" parent="ButtonLayer"]
+margin_left = 112.0
+margin_top = 136.0
+margin_right = 314.0
+margin_bottom = 169.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 1, 1, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/focus = SubResource( 1 )
+action_mode = 0
+button_mask = 0
+text = "BATTLE"
+align = 0
+
+[node name="HeartPos" type="Position2D" parent="ButtonLayer/BattleButton"]
+position = Vector2( -20, 20 )
+
+[node name="EditButton" type="ToolButton" parent="ButtonLayer"]
+margin_left = 112.0
+margin_top = 200.0
+margin_right = 396.0
+margin_bottom = 233.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 1, 1, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/focus = SubResource( 2 )
+action_mode = 0
+button_mask = 0
+text = "PARTY"
+align = 0
+
+[node name="HeartPos" type="Position2D" parent="ButtonLayer/EditButton"]
+position = Vector2( -20, 20 )
+
+[node name="QuitButton" type="ToolButton" parent="ButtonLayer"]
+margin_left = 112.0
+margin_top = 272.0
+margin_right = 396.0
+margin_bottom = 305.0
+mouse_filter = 2
+custom_colors/font_color_focus = Color( 1, 1, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/focus = SubResource( 3 )
+action_mode = 0
+button_mask = 0
+text = "QUIT"
+align = 0
+
+[node name="HeartPos" type="Position2D" parent="ButtonLayer/QuitButton"]
+position = Vector2( -20, 20 )
+
+[node name="Soul" type="Sprite" parent="."]
+position = Vector2( 92, 156 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[connection signal="focus_entered" from="ButtonLayer/BattleButton" to="." method="_on_Button_focus_entered"]
+[connection signal="pressed" from="ButtonLayer/BattleButton" to="." method="_on_BattleButton_pressed"]
+[connection signal="focus_entered" from="ButtonLayer/EditButton" to="." method="_on_Button_focus_entered"]
+[connection signal="pressed" from="ButtonLayer/EditButton" to="." method="_on_EditButton_pressed"]
+[connection signal="focus_entered" from="ButtonLayer/QuitButton" to="." method="_on_Button_focus_entered"]
+[connection signal="pressed" from="ButtonLayer/QuitButton" to="." method="_on_QuitButton_pressed"]

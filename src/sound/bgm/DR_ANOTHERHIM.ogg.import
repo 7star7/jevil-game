@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DR_ANOTHERHIM.ogg-0b4416fa4237f86f59d2ddc93893ea05.oggstr"
+
+[deps]
+
+source_file="res://src/sound/bgm/DR_ANOTHERHIM.ogg"
+dest_files=[ "res://.import/DR_ANOTHERHIM.ogg-0b4416fa4237f86f59d2ddc93893ea05.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
