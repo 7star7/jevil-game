@@ -1,5 +1,5 @@
 # JEVIL Fight
-A recreation of the secret boss fight from Deltarune Chapter 1 in Godot 3.X. About that.
+A recreation of the secret boss fight from Deltarune Chapter 1 in Godot 3.X. About that. It's a sketchy project, so don't mind it much.
 
 It started as a Undertale recreation but ended up like this, for some reason.
 
@@ -20,4 +20,4 @@ I'm going to rework some of the already added functions because I believe it cou
 
 And finishing Jevil, because it's the whole point of it.
 
-I don't know if remake it for Godot 4.X. I prefer using 3.X since my PC can't into Modernity™. I wouldn't be hard to download the LTS version and run it, could it be?
+I don't know if remake it for Godot 4.X. I prefer using 3.X since my PC can't into Modernity™. It wouldn't be hard to download the LTS version and run it, could it be?
