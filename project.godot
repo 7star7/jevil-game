@@ -43,6 +43,7 @@ AudioPlayer="*res://src/scenes/global/AUDIO_PLAYER.tscn"
 CharacterData="*res://src/scenes/global/CHARACTER_DATA.gd"
 PlayerData="*res://src/scenes/global/PLAYER_DATA.gd"
 Quitting="*res://src/scenes/global/QUIT_FUNC.tscn"
+BattleGlobal="*res://src/scenes/battle/BATTLE_GLOBAL.gd"
 
 [display]
 
