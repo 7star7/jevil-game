@@ -3,6 +3,9 @@ extends Node
 const player_panel = preload("res://src/scenes/battle/player/panel/BT_P_PANEL.tscn")
 const enemy_entry = preload("res://src/scenes/battle/foe/panel/BT_E_LIST.tscn")
 const attack_placeholder = preload("res://src/scenes/battle/attack/AT_PLACEHOLDER.tscn")
+const attack_club = preload("res://src/scenes/battle/attack/AT_JV_BOMB_C.tscn")
+const attack_diamond = preload("res://src/scenes/battle/attack/AT_JV_BOMB_D.tscn")
+const attack_heart = preload("res://src/scenes/battle/attack/AT_JV_BOMB_H.tscn")
 
 enum {
 	DONE,
@@ -28,6 +31,7 @@ var players_actions := [DONE, DONE, DONE]
 
 var current_party := CharacterData.current_party
 var members_panels := []
+var attacks := [attack_placeholder, attack_club, attack_diamond, attack_heart]
 
 func do_attack(attack):
 	var new_attack = attack.instance()
@@ -128,7 +132,7 @@ func player_turn():
 
 func enemy_turn():
 	if $EnemyLayer.get_child_count() <= 4:
-		do_attack(attack_placeholder)
+		do_attack(attacks[randi() % attacks.size()])
 		soul.show()
 		soul.position = Vector2(321, 171)
 		battle_timer = 20.0
@@ -166,6 +170,7 @@ func _process(delta):
 		$BottomInterface/TextZone.show()
 	
 	$TensionBar.tension_points = tension_points
+	if soul.visible: BattleGlobal.player_position = soul.global_position
 
 func _on_Soul_grazed():
 	tension_points = min(tension_points + 6, 250)
