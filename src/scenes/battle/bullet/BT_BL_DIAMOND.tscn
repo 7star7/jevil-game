@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/scenes/battle/bullet/BT_BL_SPADE.gd" type="Script" id=1]
+[ext_resource path="res://src/sprites/bullet/BL_DIAMOND.png" type="Texture" id=2]
+
+[node name="BulletClub" type="Area2D"]
+collision_layer = 2
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+offset = Vector2( 0, 0.5 )
+
+[node name="Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0, 3, 6, 0, 0, -3, -7, 0 )
+
+[node name="Notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0, 4.17233e-07 )
+scale = Vector2( 0.8, 0.8 )
+
+[connection signal="screen_exited" from="Notifier" to="." method="_on_Notifier_screen_exited"]
