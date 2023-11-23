@@ -13,7 +13,7 @@ At the moment, that is.
 
 You can pretty much change the characters (in the code, `CHARACTER_DATA.gd` specifically), that *does* change the menus properly *and* the system actually can recognize it. It also reconigzes the choice depending of the character. You can even add a "character" through JSON files as an end-user. But that is the whole project. Also *one* Jevil attack.
 
-Now, it's here in GitHub, in public sight. That *is* a feature too.
+Now, it's here in GitHub, in public sight. That *is* a feature too. Issues are not open right now, but once the project gains an actual shape, you will be able to complain of a real something.
 
 ## What to do
 I (7star7) am going to rework some of the already added functions because I believe it could've been done better.
