@@ -6,7 +6,7 @@ const bullet_bomb_heart = preload("res://src/scenes/battle/bullet/BT_BL_BOMB_HEA
 
 var startup_timer := 0.5
 var bomb_timer = 0.0
-var bomb_cooldown = 0.2
+var bomb_cooldown = 0.4
 var bomb_bias := 0
 var camera_debug = Camera2D.new()
 
@@ -39,7 +39,7 @@ func _process(delta):
 #		rand_range(85.5, 94.5))
 		create_bomb()
 		bomb_timer = 0
-		bomb_cooldown = rand_range(0.22, 0.48)
+		bomb_cooldown = rand_range(0.44, 0.96)
 	
 	if !has_node("DefaultBox"):
 		for x in get_child_count():

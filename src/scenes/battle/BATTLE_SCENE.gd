@@ -6,6 +6,7 @@ const attack_placeholder = preload("res://src/scenes/battle/attack/AT_PLACEHOLDE
 const attack_club = preload("res://src/scenes/battle/attack/AT_JV_BOMB_C.tscn")
 const attack_diamond = preload("res://src/scenes/battle/attack/AT_JV_BOMB_D.tscn")
 const attack_heart = preload("res://src/scenes/battle/attack/AT_JV_BOMB_H.tscn")
+const attack_diamond_b = preload("res://src/scenes/battle/attack/AT_JV_DIAM_BT.tscn")
 
 enum {
 	DONE,
@@ -31,7 +32,8 @@ var players_actions := [DONE, DONE, DONE]
 
 var current_party := CharacterData.current_party
 var members_panels := []
-var attacks := [attack_placeholder, attack_club, attack_diamond, attack_heart]
+var attacks := [attack_placeholder, attack_club, attack_diamond, attack_heart,
+attack_diamond_b]
 
 func do_attack(attack):
 	var new_attack = attack.instance()
