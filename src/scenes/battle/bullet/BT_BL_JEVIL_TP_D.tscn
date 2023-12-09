@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/scenes/battle/bullet/BT_BL_JEVIL_TP_D.gd" type="Script" id=1]
+[ext_resource path="res://assets/sound/effects/JEVIL_OH.wav" type="AudioStream" id=2]
+[ext_resource path="res://src/sprites/bullet/JEVIL_ATTACK.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "appear"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 2 ), Vector2( 2, 2 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "disappear"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 0, 2 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[node name="JevilDiamond" type="Sprite"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+script = ExtResource( 1 )
+
+[node name="Anime" type="AnimationPlayer" parent="."]
+autoplay = "appear"
+anims/appear = SubResource( 1 )
+anims/disappear = SubResource( 2 )
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[connection signal="animation_finished" from="Anime" to="." method="_on_Anime_animation_finished"]

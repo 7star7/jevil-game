@@ -1,12 +1,15 @@
 extends Node
 
-const player_panel = preload("res://src/scenes/battle/player/panel/BT_P_PANEL.tscn")
-const enemy_entry = preload("res://src/scenes/battle/foe/panel/BT_E_LIST.tscn")
-const attack_placeholder = preload("res://src/scenes/battle/attack/AT_PLACEHOLDER.tscn")
-const attack_club = preload("res://src/scenes/battle/attack/AT_JV_BOMB_C.tscn")
-const attack_diamond = preload("res://src/scenes/battle/attack/AT_JV_BOMB_D.tscn")
-const attack_heart = preload("res://src/scenes/battle/attack/AT_JV_BOMB_H.tscn")
-const attack_diamond_b = preload("res://src/scenes/battle/attack/AT_JV_DIAM_BT.tscn")
+const player_panel = preload("player/panel/BT_P_PANEL.tscn")
+const enemy_entry = preload("foe/panel/BT_E_LIST.tscn")
+const attack_placeholder = preload("attack/AT_JV_BOMB_S.tscn")
+const attack_club = preload("attack/AT_JV_BOMB_C.tscn")
+const attack_diamond = preload("attack/AT_JV_BOMB_D.tscn")
+const attack_heart = preload("attack/AT_JV_BOMB_H.tscn")
+const attack_diamond_b = preload("attack/AT_JV_DIAM_BT.tscn")
+const attack_spade_c = preload("attack/AT_JV_SPAD_C.tscn")
+const attack_spade_j = preload("attack/AT_JV_TELE_S.tscn")
+const attack_diamond_j = preload("attack/AT_JV_TELE_D.tscn")
 
 enum {
 	DONE,
@@ -33,7 +36,7 @@ var players_actions := [DONE, DONE, DONE]
 var current_party := CharacterData.current_party
 var members_panels := []
 var attacks := [attack_placeholder, attack_club, attack_diamond, attack_heart,
-attack_diamond_b]
+attack_diamond_b, attack_spade_c, attack_spade_j, attack_diamond_j]
 
 func do_attack(attack):
 	var new_attack = attack.instance()
