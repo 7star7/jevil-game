@@ -3,7 +3,7 @@ extends Node2D
 const bullet_spade = preload("res://src/scenes/battle/bullet/BT_BL_SPADE_C.tscn")
 
 var startup_timer := 0.5
-var ring_timer = 1.5
+var ring_timer = 2.3
 var ring_cooldown = 3.0
 var camera_debug = Camera2D.new()
 
@@ -18,7 +18,7 @@ func create_bullet(bullet_type, pos, rad = 90, dmg = 1):
 
 func create_ring(ring_num: int):
 	var ring_duration := 2.4
-	var ring_lenght := Vector2(136, 0)
+	var ring_lenght := Vector2(124, 0)
 	var rad: float = rand_range(0, TAU)
 	for bull in ring_num:
 		var bull_pos := ring_lenght.rotated(rad) + self.global_position
@@ -40,7 +40,7 @@ func _process(delta):
 	if startup_timer <= 0:
 		ring_timer += delta
 	if ring_timer > ring_cooldown:
-		create_ring(14)
+		create_ring(10)
 		ring_timer = 0
 	
 	if !has_node("DefaultBox"):

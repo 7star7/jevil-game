@@ -11,6 +11,7 @@ var move_forward := false
 func _process(delta):
 	start_timer = max(start_timer - delta, 0)
 	if move_forward:
+		$Sprite.modulate = Color(1, 1, 1, 1)
 		speed = min(speed + 4.0, 240.0)
 	elif start_timer == 0:
 		speed = max(speed - 0.2, -25.0)

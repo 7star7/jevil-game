@@ -5,7 +5,7 @@ const jevil_spade = preload("../bullet/BT_BL_JEVIL_TP_S.tscn")
 var startup_timer := 0.5
 var camera_debug = Camera2D.new()
 
-var jevil_timer := 0.0
+var jevil_timer := 0.5
 var jevil_cooldown := 1.0
 var spawn_rect_left := Rect2(-148 - 108, -96, 108, 96 * 2)
 var spawn_rect_right := Rect2(148, -96, 108, 96 * 2)

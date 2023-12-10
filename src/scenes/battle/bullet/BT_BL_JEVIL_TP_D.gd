@@ -10,7 +10,7 @@ var end_timer := wait_time
 
 func create_spade(degree, b_speed, dmg = 1):
 	var spade = DIAMOND_BULLET.instance()
-	spade.scale = Vector2(0.4, 0.4)
+	spade.scale = Vector2(0.7, 0.7)
 	spade.global_position = self.global_position
 	spade.direction = degree
 	spade.speed = b_speed

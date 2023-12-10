@@ -7,11 +7,11 @@ var leaving := false
 var wait_time := 0.4
 var start_timer := wait_time
 var end_timer := wait_time
-const DIFF_DISTANCE = 9.6
+const DIFF_DISTANCE = 12.5
 
 func create_spade(degree, b_speed, dmg = 1):
 	var spade = SPADE_BULLET.instance()
-	spade.scale = Vector2(0.25, 0.25)
+	spade.scale = Vector2(0.4, 0.4)
 	spade.global_position = self.global_position
 	spade.direction = degree
 	spade.speed = b_speed
