@@ -37,6 +37,10 @@ boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://THE_DELTARUNE.png"
 config/windows_native_icon="res://DELTA_ICON.ico"
 
+[audio]
+
+default_bus_layout="res://BUS_LAYOUT.tres"
+
 [autoload]
 
 AudioPlayer="*res://src/scenes/global/AUDIO_PLAYER.tscn"

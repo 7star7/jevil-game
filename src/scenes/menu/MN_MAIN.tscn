@@ -94,6 +94,43 @@ align = 0
 [node name="HeartPos" type="Position2D" parent="ButtonLayer/QuitButton"]
 position = Vector2( -20, 20 )
 
+[node name="VolumeLayer" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -306.0
+margin_bottom = 74.0
+
+[node name="VBox" type="VBoxContainer" parent="VolumeLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -20.0
+margin_right = 112.0
+margin_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VolumeLayer/VBox"]
+margin_top = 3.0
+margin_right = 224.0
+margin_bottom = 17.0
+grow_horizontal = 2
+text = "Master Volume"
+align = 1
+valign = 1
+
+[node name="HSlider" type="HSlider" parent="VolumeLayer/VBox"]
+margin_top = 21.0
+margin_right = 224.0
+margin_bottom = 37.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+value = 30.0
+ticks_on_borders = true
+
 [node name="Soul" type="Sprite" parent="."]
 position = Vector2( 92, 156 )
 scale = Vector2( 2, 2 )
@@ -104,6 +141,7 @@ texture = ExtResource( 4 )
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
+bus = "Music"
 
 [connection signal="focus_entered" from="ButtonLayer/BattleButton" to="." method="_on_Button_focus_entered"]
 [connection signal="pressed" from="ButtonLayer/BattleButton" to="." method="_on_BattleButton_pressed"]
@@ -111,3 +149,4 @@ autoplay = true
 [connection signal="pressed" from="ButtonLayer/EditButton" to="." method="_on_EditButton_pressed"]
 [connection signal="focus_entered" from="ButtonLayer/QuitButton" to="." method="_on_Button_focus_entered"]
 [connection signal="pressed" from="ButtonLayer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="drag_ended" from="VolumeLayer/VBox/HSlider" to="." method="_on_HSlider_drag_ended"]

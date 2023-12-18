@@ -10,6 +10,7 @@ onready var ki_tan = get_tree()
 
 func _ready():
 	battle_button.grab_focus()
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear2db($VolumeLayer/VBox/HSlider.value / 100))
 
 func _on_Button_focus_entered():
 	if get_focus_owner() != null:
@@ -30,3 +31,8 @@ func _on_EditButton_pressed():
 func _on_QuitButton_pressed():
 	AudioPlayer.play_sfx(sfx_accept)
 	ki_tan.quit()
+
+func _on_HSlider_drag_ended(value_changed):
+	if value_changed:
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear2db($VolumeLayer/VBox/HSlider.value / 100))
+		print(linear2db($VolumeLayer/VBox/HSlider.value / 100))
