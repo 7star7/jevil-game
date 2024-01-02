@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/sprites/bullet/BL_BOMB_SPADE.png" type="Texture" id=1]
+[ext_resource path="res://src/scenes/battle/bullet/BT_BL_BOMB_EXPLOSION.gd" type="Script" id=2]
+[ext_resource path="res://src/scenes/battle/bullet/BT_BL_BOMB_SPADE.gd" type="Script" id=3]
+[ext_resource path="res://src/sound/effects/SFX_DR_BOMB.wav" type="AudioStream" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 23, 23 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 23, 0, 23, 23 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="SpadeBomb" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="AnimeSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 3 )
+playing = true
+
+[node name="Explosion" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+script = ExtResource( 2 )
+
+[node name="AudioStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
