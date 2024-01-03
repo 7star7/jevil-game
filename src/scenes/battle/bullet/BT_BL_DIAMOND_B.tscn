@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://src/sprites/bullet/BL_DIAMOND_BLACK.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/battle/jevil/BL_DIAMOND_BLACK.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/battle/bullet/BT_BL_DIAMOND_B.gd" type="Script" id=2]
 
 [node name="BulletDiamondBlack" type="Area2D"]

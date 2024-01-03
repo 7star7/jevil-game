@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://src/sprites/bullet/BL_BOMB_DIAMOND.png" type="Texture" id=1]
-[ext_resource path="res://src/sound/effects/SFX_DR_BOMB.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/sprites/battle/jevil/BL_BOMB_DIAMOND.png" type="Texture" id=1]
+[ext_resource path="res://assets/sound/effects/SFX_DR_BOMB.wav" type="AudioStream" id=2]
 [ext_resource path="res://src/scenes/battle/bullet/BT_BL_BOMB_DIAMOND.gd" type="Script" id=4]
 [ext_resource path="res://src/scenes/battle/bullet/BT_BL_BOMB_EXPLOSION.gd" type="Script" id=5]
 

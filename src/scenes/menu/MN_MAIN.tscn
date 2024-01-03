@@ -2,8 +2,8 @@
 
 [ext_resource path="res://assets/fonts/8ope/FT_EO_DELTARUNE.tres" type="DynamicFont" id=1]
 [ext_resource path="res://src/scenes/menu/MN_BACKGROUND.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/sound/bgm/DR_ANOTHERHIM.ogg" type="AudioStream" id=3]
-[ext_resource path="res://src/sprites/menu/MN_SOUL.png" type="Texture" id=4]
+[ext_resource path="res://assets/sound/bgm/DR_ANOTHERHIM.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/sprites/menu/MN_SOUL.png" type="Texture" id=4]
 [ext_resource path="res://src/scenes/menu/MN_MAIN.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]

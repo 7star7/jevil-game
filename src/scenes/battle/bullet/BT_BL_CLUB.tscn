@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/scenes/battle/bullet/BT_BL_SPADE.gd" type="Script" id=1]
-[ext_resource path="res://src/sprites/bullet/BL_CLUB.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/battle/jevil/BL_CLUB.png" type="Texture" id=2]
 
 [node name="BulletClub" type="Area2D"]
 collision_layer = 2

@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://src/sound/effects/SFX_DR_BOMB.wav" type="AudioStream" id=1]
-[ext_resource path="res://src/sprites/bullet/BL_BIG.png" type="Texture" id=2]
+[ext_resource path="res://assets/sound/effects/SFX_DR_BOMB.wav" type="AudioStream" id=1]
+[ext_resource path="res://src/scenes/battle/bullet/BT_BL_BOMB_EXPLOSION.gd" type="Script" id=2]
 [ext_resource path="res://src/scenes/battle/bullet/BT_BL_BOMB_HEART.gd" type="Script" id=3]
-[ext_resource path="res://src/sprites/bullet/BL_BOMB_HEART.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/battle/jevil/BL_BOMB_HEART.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 4 )
@@ -27,13 +27,11 @@ script = ExtResource( 3 )
 [node name="AnimeSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
-[node name="Explosion" type="Sprite" parent="."]
+[node name="Explosion" type="Node2D" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 2 )
+script = ExtResource( 2 )
 
 [node name="AudioStream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )

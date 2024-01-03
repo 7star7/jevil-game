@@ -1,7 +1,7 @@
 extends HBoxContainer
 
-const sfx_squeak = preload("res://src/sound/effects/SFX_UT_SQUEAK.wav")
-const sfx_accept = preload("res://src/sound/effects/SFX_UT_ACCEPT.wav")
+const sfx_squeak = preload("res://assets/sound/effects/SFX_UT_SQUEAK.wav")
+const sfx_accept = preload("res://assets/sound/effects/SFX_UT_ACCEPT.wav")
 
 signal cancelling
 

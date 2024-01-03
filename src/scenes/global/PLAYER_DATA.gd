@@ -1,7 +1,7 @@
 extends Node
 
 const SAVE_FILE := "user://save_file.dat"
-const STARWALKER := preload("res://src/sprites/starwalker.png")
+#const STARWALKER := preload("res://src/sprites/starwalker.png")
 
 ## Dipper (weapon), outfit (armor) and item menus use ID
 var default_data: Dictionary = {
@@ -17,7 +17,7 @@ var default_data: Dictionary = {
 }
 
 var current_data := default_data
-var sw_check = false
+#var sw_check = false
 var custom_characters := []
 
 func check_file():
@@ -77,11 +77,11 @@ func get_json_files_from_folder(path: String):
 	return files
 
 func _init():
-	var check_for_mods = false
-	var file = File.new()
-	check_for_mods = file.file_exists("Aya.png")
-	if check_for_mods:
-		sw_check = true
+#	var check_for_mods = false
+#	var file = File.new()
+#	check_for_mods = file.file_exists("Aya.png")
+#	if check_for_mods:
+#		sw_check = true
 	
 	var json_mods = get_json_files_from_folder("mods")
 	if json_mods == null:
@@ -123,10 +123,10 @@ func _init():
 		
 		custom_characters.append(new_character)
 
-func _ready():
-	if sw_check:
-		var sw = Sprite.new()
-		sw.centered = false
-		sw.z_index = 10
-		sw.texture = STARWALKER
-		add_child(sw)
+#func _ready():
+#	if sw_check:
+#		var sw = Sprite.new()
+#		sw.centered = false
+#		sw.z_index = 10
+#		sw.texture = STARWALKER
+#		add_child(sw)

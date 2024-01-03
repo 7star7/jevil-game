@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/scenes/battle/bullet/BT_BL_JEVIL_TP_D.gd" type="Script" id=1]
 [ext_resource path="res://assets/sound/effects/JEVIL_OH.wav" type="AudioStream" id=2]
-[ext_resource path="res://src/sprites/bullet/JEVIL_ATTACK.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/battle/jevil/JEVIL_ATTACK.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"

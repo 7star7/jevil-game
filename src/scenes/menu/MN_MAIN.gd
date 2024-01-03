@@ -1,6 +1,6 @@
 extends Control
 
-const sfx_accept = preload("res://src/sound/effects/SFX_UT_ACCEPT.wav")
+const sfx_accept = preload("res://assets/sound/effects/SFX_UT_ACCEPT.wav")
 
 onready var tween = $Tween
 onready var battle_button = $ButtonLayer/BattleButton

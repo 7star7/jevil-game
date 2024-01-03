@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_UT_ACCEPT.wav-685846e80fb7a26d4954440db0e5d2da.sample"
+
+[deps]
+
+source_file="res://assets/sound/effects/SFX_UT_ACCEPT.wav"
+dest_files=[ "res://.import/SFX_UT_ACCEPT.wav-685846e80fb7a26d4954440db0e5d2da.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
