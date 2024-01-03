@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://src/sprites/battle/SOUL_B_R.png" type="Texture" id=1]
-[ext_resource path="res://src/sprites/battle/SOUL_GR_R.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/battle/ui/SOUL_B_R.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/battle/ui/SOUL_GR_R.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/battle/player/BT_SOUL_R.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=3]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://src/sprites/menu/DEPTH.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/menu/DEPTH.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/menu/MN_BG_DEPTH.gd" type="Script" id=2]
 
 [node name="DepthGroup" type="Node2D"]

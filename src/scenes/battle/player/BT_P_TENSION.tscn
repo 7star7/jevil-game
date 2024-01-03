@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/fonts/8ope/8bitoperator_jve.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://src/sprites/battle/TP_MAX.png" type="Texture" id=2]
-[ext_resource path="res://src/sprites/battle/TP_BAR_BOTTOM.png" type="Texture" id=3]
-[ext_resource path="res://src/sprites/battle/TP_BAR_WHITE.png" type="Texture" id=4]
-[ext_resource path="res://src/sprites/battle/TP_NAME.png" type="Texture" id=5]
-[ext_resource path="res://src/sprites/battle/TP_PERCENT.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/battle/ui/TP_MAX.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/battle/ui/TP_BAR_BOTTOM.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/battle/ui/TP_BAR_WHITE.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/battle/ui/TP_NAME.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/battle/ui/TP_PERCENT.png" type="Texture" id=6]
 [ext_resource path="res://src/scenes/battle/player/BT_P_TENSION.gd" type="Script" id=7]
-[ext_resource path="res://src/sprites/battle/TP_BAR_ORANGE.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/battle/ui/TP_BAR_ORANGE.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=18]
 size = 32

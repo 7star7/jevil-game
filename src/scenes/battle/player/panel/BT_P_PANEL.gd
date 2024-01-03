@@ -2,8 +2,8 @@ extends Control
 
 const button_base = preload("res://src/scenes/battle/player/panel/BT_P_PANEL_B.tscn")
 const new_line = preload("res://src/scenes/battle/player/panel/BT_P_PANEL_L.tscn")
-const sfx_squeak = preload("res://src/sound/effects/SFX_UT_SQUEAK.wav")
-const sfx_accept = preload("res://src/sound/effects/SFX_UT_ACCEPT.wav")
+const sfx_squeak = preload("res://assets/sound/effects/SFX_UT_SQUEAK.wav")
+const sfx_accept = preload("res://assets/sound/effects/SFX_UT_ACCEPT.wav")
 #"res://src/sound/effects/SFX_DR_BOMB.wav"
 
 signal command_selected(id)
@@ -23,13 +23,13 @@ enum SelectedCommand {
 	SPECIAL
 }
 
-var command_icons = [preload("res://src/sprites/battle/ICON_FIGHT.png"),
-preload("res://src/sprites/battle/ICON_FIGHT.png"),
-preload("res://src/sprites/battle/ICON_ACT.png"),
-preload("res://src/sprites/battle/ICON_MAGIC.png"),
-preload("res://src/sprites/battle/ICON_ITEM.png"),
-preload("res://src/sprites/battle/ICON_SPARE.png"),
-preload("res://src/sprites/battle/ICON_DEFEND.png")]
+var command_icons = [preload("res://assets/sprites/battle/ui/ICON_FIGHT.png"),
+preload("res://assets/sprites/battle/ui/ICON_FIGHT.png"),
+preload("res://assets/sprites/battle/ui/ICON_ACT.png"),
+preload("res://assets/sprites/battle/ui/ICON_MAGIC.png"),
+preload("res://assets/sprites/battle/ui/ICON_ITEM.png"),
+preload("res://assets/sprites/battle/ui/ICON_SPARE.png"),
+preload("res://assets/sprites/battle/ui/ICON_DEFEND.png")]
 var character_icons = []
 
 onready var background = $Command/Background

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://src/sprites/bullet/JEVIL_ATTACK.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/battle/jevil/JEVIL_ATTACK.png" type="Texture" id=1]
 [ext_resource path="res://assets/sound/effects/JEVIL_OH.wav" type="AudioStream" id=2]
 [ext_resource path="res://src/scenes/battle/bullet/BT_BL_JEVIL_TP_S.gd" type="Script" id=3]
 

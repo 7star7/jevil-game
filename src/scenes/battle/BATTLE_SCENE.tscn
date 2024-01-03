@@ -4,13 +4,13 @@
 [ext_resource path="res://src/scenes/battle/player/BT_P_TENSION.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/fonts/8ope/FT_EO_DELTARUNE.tres" type="DynamicFont" id=3]
 [ext_resource path="res://src/scenes/battle/BATTLE_SCENE.gd" type="Script" id=4]
-[ext_resource path="res://src/sprites/battle/PURPLE_GRID_FRONT.png" type="Texture" id=5]
-[ext_resource path="res://src/sprites/battle/PURPLE_GRID_BACK.png" type="Texture" id=6]
-[ext_resource path="res://src/sprites/SH_SCROLL.gdshader" type="Shader" id=7]
+[ext_resource path="res://assets/sprites/battle/ui/PURPLE_GRID_FRONT.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/battle/ui/PURPLE_GRID_BACK.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/battle/ui/SH_SCROLL.gdshader" type="Shader" id=7]
 [ext_resource path="res://src/scenes/battle/foe/EN_JEVIL.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/sprites/JEVIL_EXAMPLE.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/battle/ui/JEVIL_EXAMPLE.png" type="Texture" id=9]
 [ext_resource path="res://src/scenes/battle/player/panel/BT_P_FIGHT.tscn" type="PackedScene" id=10]
-[ext_resource path="res://src/sprites/player/kris/PL_K_B_IDLE.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/battle/player/kris/PL_K_B_IDLE.png" type="Texture" id=14]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 7 )
@@ -106,6 +106,7 @@ color = Color( 0, 0, 0, 0.686275 )
 position = Vector2( 148, 187 )
 frames = SubResource( 17 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="EnemyLayer" type="Node2D" parent="."]

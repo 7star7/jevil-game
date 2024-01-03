@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-const sfx_hurt = preload("res://src/sound/effects/SFX_UT_HURT.wav")
-const sfx_graze = preload("res://src/sound/effects/SFX_DR_GRAZE.wav")
+const sfx_hurt = preload("res://assets/sound/effects/SFX_UT_HURT.wav")
+const sfx_graze = preload("res://assets/sound/effects/SFX_DR_GRAZE.wav")
 
 onready var screen_size = get_viewport_rect().size
 var moving = false
