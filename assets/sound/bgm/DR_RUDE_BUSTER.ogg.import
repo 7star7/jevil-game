@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DR_RUDE_BUSTER.ogg-66f550d84c4b3bfae0b5e014269db181.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/bgm/DR_RUDE_BUSTER.ogg"
+dest_files=[ "res://.import/DR_RUDE_BUSTER.ogg-66f550d84c4b3bfae0b5e014269db181.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
